@@ -22,7 +22,7 @@ spec:
           type: SystemAssigned
         properties:
           dnsPrefix: my-cluster-dns
-          kubernetesVersion: 1.21.14
+          kubernetesVersion: 1.23.8
       nodePools:
       - type: Microsoft.ContainerService/managedClusters/agentPools
         apiVersion: "2021-05-01"
@@ -32,4 +32,4 @@ spec:
           count: 1
           maxPods: 30
           mode: System
-          vmSize: Standard_B2s
+          vmSize: Standard_DS2_v2
