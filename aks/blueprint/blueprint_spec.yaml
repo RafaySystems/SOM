@@ -6,7 +6,6 @@ metadata:
 spec:
   base:
     name: default-aks
-    version: 1.15.0
   defaultAddons:
     enableIngress: true
     enableLogging: false
@@ -22,3 +21,8 @@ spec:
   sharing:
     enabled: false
   version: v1
+  networkPolicy:
+    enabled: true
+    profile:
+      name: default
+      version: version-1659154492

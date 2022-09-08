@@ -6,7 +6,6 @@ metadata:
 spec:
   base:
     name: default
-    version: 1.15.0
   customAddons:
   - name: cloudwatch-addon
     version: v1
@@ -25,3 +24,8 @@ spec:
   sharing:
     enabled: false
   version: v1
+  networkPolicy:
+    enabled: true
+    profile:
+      name: default
+      version: version-1659154492
