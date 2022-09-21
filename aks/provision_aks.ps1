@@ -55,7 +55,7 @@ $cliconfig | Out-File .\cliconfig.json
 #Init rctl
 .\rctl config init '.\cliconfig.json'
 
-cd .\aks-demo
+cd .\som
 
 #check if cluster exists, if not, update cluster
 $time = get-date -format hh:mm:ss
