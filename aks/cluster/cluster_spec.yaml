@@ -29,7 +29,7 @@ spec:
         location: azureregion
         name: agentpooly
         properties:
-          count: 1
+          count: 2
           maxPods: 30
           mode: System
           vmSize: Standard_DS2_v2
