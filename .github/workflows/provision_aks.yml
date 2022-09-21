@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'aks/provision_aks.ps1'
+      - 'aks/cluster/*_custom.yaml'
 jobs:
   build:
     runs-on: windows-2019
@@ -10,4 +11,5 @@ jobs:
       - name: Check out repo        
         uses: actions/checkout@v3
       - run: |
-          ./aks/provision_aks.ps1 '${{ secrets.rafaysecret }}'
+          ./aks/provision_aks.ps1 '${{ secrets.rafaysecret }}' '${{ secrets.azuresecret }}'
+      - uses: EndBug/add-and-commit@v9
