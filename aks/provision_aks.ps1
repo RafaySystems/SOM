@@ -33,9 +33,6 @@ $azurecontainter = ''        # The name of the Azure storage container in the st
 #DO NOT EDIT BELOW THIS LINE
 ################################################
 
-################################################
-#DO NOT EDIT BELOW THIS LINE
-################################################
 
 $cliconfig=$args[0]
 $azureclientsecret = $args[1]
