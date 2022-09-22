@@ -5,6 +5,7 @@ metadata:
   project: poc
 spec:
   blueprint: aks-blueprint
+  blueprintversion: v1
   cloudprovider: azure-cloud-credential
   clusterConfig:
     apiVersion: rafay.io/v1alpha1
