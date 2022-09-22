@@ -33,9 +33,9 @@ $azurecontainter = ''        # The name of the Azure storage container in the st
 #DO NOT EDIT BELOW THIS LINE
 ################################################
 
-
 $cliconfig=$args[0]
 $azureclientsecret = $args[1]
+$reponame = $args[2]
 
 #set path to write temp files outside of repo
 cd ..
@@ -52,7 +52,7 @@ $cliconfig | Out-File .\cliconfig.json
 #Init rctl
 .\rctl config init '.\cliconfig.json'
 
-cd .\som
+cd .\$reponame
 
 #check if cluster exists, if not, update cluster
 $time = get-date -format hh:mm:ss
@@ -287,3 +287,13 @@ $time = get-date -format hh:mm:ss
 write-host "$time - Creating restore policy" 
 ..\rctl create dp-policy restore-policy --type restore --restore-pvs -p $projectname  
 sleep 10 
+
+#remove custom files but leave custom cluster spec
+$specfiles = Get-ChildItem -Path .\aks\*_custom.yaml -Recurse | select fullname -ExpandProperty fullname
+foreach($specfile in $specfiles)
+{
+    if ($specfile -notmatch "cluster_spec_custom.yaml")
+    {
+        remove-item $specfile
+    }
+}

@@ -11,5 +11,5 @@ jobs:
       - name: Check out repo        
         uses: actions/checkout@v3
       - run: |
-          ./aks/provision_aks.ps1 '${{ secrets.rafaysecret }}' '${{ secrets.azuresecret }}'
+          ./aks/provision_aks.ps1 '${{ secrets.rafaysecret }}' '${{ secrets.azuresecret }}' '${{ github.event.repository.name }}'
       - uses: EndBug/add-and-commit@v9
