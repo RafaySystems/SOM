@@ -4,7 +4,7 @@ metadata:
   name: repo-is-openpolicyagent
 spec:
   match:
-    enforcementAction: deny
+    enforcementAction: warn
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]

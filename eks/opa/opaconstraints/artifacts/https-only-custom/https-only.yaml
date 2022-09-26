@@ -4,7 +4,7 @@ metadata:
   name: ingress-https-only
 spec:
   match:
-    enforcementAction: deny
+    enforcementAction: warn
     kinds:
       - apiGroups: ["extensions", "networking.k8s.io"]
         kinds: ["Ingress"]

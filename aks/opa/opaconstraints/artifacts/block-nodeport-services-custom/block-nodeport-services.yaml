@@ -4,7 +4,7 @@ metadata:
   name: block-node-port
 spec:
   match:
-    enforcementAction: deny
+    enforcementAction: warn
     kinds:
       - apiGroups: [""]
         kinds: ["Service"]
